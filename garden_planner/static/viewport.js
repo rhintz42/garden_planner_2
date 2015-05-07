@@ -15,12 +15,14 @@ var Viewport = function(environment, container_id, signals) {
     self.render();
 }
 
-Viewport.prototype.render = function() {
-    var self = this;
-    requestAnimationFrame( self.render.bind(self) );
+Viewport.prototype = {
+    render: function() {
+        var self = this;
+        requestAnimationFrame( self.render.bind(self) );
 
-    //self.cube.rotation.x += 0.01;
-    //self.cube.rotation.y += 0.01;
+        //self.cube.rotation.x += 0.01;
+        //self.cube.rotation.y += 0.01;
 
-    self.renderer.render(self.environment.scene, self.camera);
+        self.renderer.render(self.environment.scene, self.camera);
+    }
 }
