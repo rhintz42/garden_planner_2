@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Garden Planner</title>
+        <style>
+            #terrain-container {
+                float: left;
+                clear: both;
+                margin-left: 40px;
+            }
+        </style>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+        <script src="/static/libs/stats.min.js"></script>
+        <script src="/static/models/environment.js"></script>
+        <script src="/static/controllers/environment.js"></script>
+        <script src="/static/viewport.js"></script>
+        <script src="/static/ui.js"></script>
+        <script src="/static/libs/signals.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            /*
+                Add Underscore.js
+            */
+
+            $(function() {
+                var environment = new EnvironmentController('terrain-container');
+            });
+
+        </script>
+
+	<div id="header-buttons" style="top: 50; float: left;">
+		<!-- Standard button -->
+		<button type="button" class="btn btn-default" value="higher_terrain">Higher Terrain</button>
+
+		<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+		<button type="button" class="btn btn-primary" value="lower_terrain">Lower Terrain</button>
+
+		<!-- Indicates a successful or positive action -->
+		<button type="button" class="btn btn-success" value="change_terrain_texture">Change Terrain Texture</button>
+
+		<!-- Contextual button for informational alert messages -->
+		<button type="button" class="btn btn-info" value="info">Info</button>
+
+		<!-- Indicates caution should be taken with this action -->
+		<button type="button" class="btn btn-warning" value="warning">Warning</button>
+
+		<!-- Indicates a dangerous or potentially negative action -->
+		<button type="button" class="btn btn-danger" value="danger">Danger</button>
+	</div>
+    <div id="terrain-container"></div>
+    </body>
+</html>
