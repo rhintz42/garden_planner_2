@@ -39,6 +39,8 @@ var Environment = function(width, height) {
     self.width = width;
 
     self.selected = null;
+    self.previousSelected = null;
+
     self.objects = [];
 
     self.scene = new THREE.Scene();

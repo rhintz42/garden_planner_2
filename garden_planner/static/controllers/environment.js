@@ -8,7 +8,7 @@ function EnvironmentController(container_id) {
 
     self.environment = new Environment(width, height);
 
-    self.viewport = new Viewport(self.environment, container_id, self.environment.signals)
+    self.viewport = new Viewport(self.environment, container_id)
 
     self.sideBar = new SideBar(self.$containerEl, self.environment);
     self.sideBar.addButtons();
