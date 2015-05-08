@@ -37,6 +37,8 @@ var Environment = function(width, height) {
 
     self.height = height;
     self.width = width;
+
+    self.selected = null;
     self.objects = [];
 
     self.scene = new THREE.Scene();
@@ -52,28 +54,19 @@ Environment.prototype = {
         // TODO: This is more of a temp function
         // Add cube
         var self = this;
-
-        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-        var obj = new THREE.Mesh( geometry, material );
-        if(x === undefined) {
-            x = 0;
-        }
-        if(y === undefined) {
-            y = 0;
-        }
-        obj.position.x = x;
-        obj.position.y = y;
-        obj.position.z = 0;
+        
+        var obj = new Plant(self, x, y, 0);
         self.objects.push(obj);
 
-        //return self.objects[0];
         this.signals.addObject.dispatch( obj ); 
+        self.selected = obj;
+
+        return self.objects[0];
     },
 
     addObjToScene: function(obj) {
         var self = this;
 
-        self.scene.add( obj );
+        self.scene.add( obj.mesh );
     }
 };

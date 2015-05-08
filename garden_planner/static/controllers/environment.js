@@ -2,7 +2,6 @@ function EnvironmentController(container_id) {
     var self = this;
 
     self.$containerEl = $('#'+container_id);
-    self.selected = undefined;
     
     var width = self.$containerEl.width() || 300;
     var height = self.$containerEl.height() || 200;

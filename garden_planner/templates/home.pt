@@ -14,6 +14,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
         <script src="/static/libs/stats.min.js"></script>
         <script src="/static/models/environment.js"></script>
+        <script src="/static/models/plant.js"></script>
         <script src="/static/controllers/environment.js"></script>
         <script src="/static/viewport.js"></script>
         <script src="/static/ui.js"></script>
